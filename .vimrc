@@ -1,22 +1,22 @@
+filetype on
 syntax on
+set nocompatible
+
 set autoindent
-set mouse=a
 set number
-set tabstop=4
-set shiftwidth=4
+set mouse=a
 set matchpairs+=<:>
 
-nnoremap r <C-R>
+set tabstop=4
+set shiftwidth=4
+set expandtab
 
-filetype on
+set path+=**
+set wildmenu
 
-if &term =~ '256color'
+nnoremap nt :tabnew<space>
+nnoremap tn :tabnext<CR>
+nnoremap tp :tabprev<CR>
+nnoremap tf :tabfirst<CR>
+nnoremap tl :tablast<CR>
 
-	set term=screen-256color
-	set t_ut=
-	set background=dark
-	
-	"let g:solarized_termcolors=256
-	"colorscheme solarized
-
-endif
