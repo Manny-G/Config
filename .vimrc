@@ -1,5 +1,7 @@
 filetype on
-syntax on
+syntax enable
+set term=screen-256color
+colorscheme darcula
 set nocompatible
 
 set autoindent
@@ -20,8 +22,3 @@ nnoremap tp :tabprev<CR>
 nnoremap tf :tabfirst<CR>
 nnoremap tl :tablast<CR>
 
-if &term =~ '256color'
-    set term=screen-256color
-    set t_ut=
-    set background=dark
-endif
