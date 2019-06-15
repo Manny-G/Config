@@ -1,6 +1,8 @@
 filetype on
 syntax enable
-set term=screen-256color
+set term=screen-256color " Win Bash
+"set t_Co=256 " Linux Bash
+"set background=dark " Linux Bash
 colorscheme darcula
 set nocompatible
 
@@ -15,6 +17,7 @@ set expandtab
 
 set path+=**
 set wildmenu
+command! MT !ctags -R .
 
 nnoremap nt :tabnew<space>
 nnoremap tn :tabnext<CR>
