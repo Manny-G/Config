@@ -11,6 +11,7 @@ set number
 set mouse=a
 set matchpairs+=<:>
 set hlsearch
+set relativenumber
 
 set tabstop=4
 set shiftwidth=4
@@ -21,8 +22,10 @@ set wildmenu
 command! MT !ctags -R .
 
 nnoremap tn :tabnew<space>
-nnoremap <C-N> :tabnext<CR>
-nnoremap <C-P> :tabprev<CR>
+nnoremap <C-Right> :tabnext<CR>
+nnoremap <C-Left> :tabprev<CR>
+nnoremap <S-Up> {
+nnoremap <S-Down> }
 
 autocmd FileType c,cpp,rust     let b:comment_leader = '// '
 autocmd FileType python,sh      let b:comment_leader = '# '
