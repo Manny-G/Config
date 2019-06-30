@@ -1,6 +1,0 @@
-lxrun /uninstall /full
-lxrun /install /y
-
-lxrun /setdefaultuser root
-passwd <your_username>
-lxrun /setdefaultuser <your_username>

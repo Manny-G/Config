@@ -5,6 +5,8 @@ set term=screen-256color " Win Bash
 "set background=dark " Linux Bash
 colorscheme darcula
 set nocompatible
+" hi Normal guibg=NONE ctermbg=NONE " Clear background
+" hi NonText guibg=NONE ctermbg=NONE " Clear background
 
 set autoindent
 set number
@@ -26,6 +28,8 @@ nnoremap <C-Right> :tabnext<CR>
 nnoremap <C-Left> :tabprev<CR>
 nnoremap <S-Up> {
 nnoremap <S-Down> }
+vnoremap < <gv
+vnoremap > >gv
 
 autocmd FileType c,cpp,rust     let b:comment_leader = '// '
 autocmd FileType python,sh      let b:comment_leader = '# '
