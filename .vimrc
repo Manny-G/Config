@@ -23,19 +23,26 @@ set path+=**
 set wildmenu
 command! MT !ctags -R .
 
+set splitbelow
+set splitright
+
 nnoremap ,t :tabnew<space>
 vnoremap < <gv
 vnoremap > >gv
 nnoremap <C-Right> :tabnext<CR>
 nnoremap <C-Left> :tabprev<CR>
-nnoremap <S-Up> {
-nnoremap <S-Down> }
-nnoremap <C-Up> :m-2<CR>
-nnoremap <C-Down> :m+1<CR>
-vnoremap <S-Up> {
-vnoremap <S-Down> }
-inoremap <S-Up> <ESC>{i
-inoremap <S-Down> <ESC>}i
+nnoremap <S-Left> :-tabmove<CR>
+nnoremap <S-Right> :+tabmove<CR>
+nnoremap <S-Up> k
+nnoremap <S-Down> j
+nnoremap <C-Up> k
+nnoremap <C-Down> j
+vnoremap <S-Up> k
+vnoremap <S-Down> j
+inoremap <S-Up> <Up>
+inoremap <S-Down> <Down>
+inoremap <C-Up> <ESC>:m-2<CR>i
+inoremap <C-Down> <ESC>:m+1<CR>i
 
 autocmd FileType c,cpp,rust     let b:comment_leader = '// '
 autocmd FileType python,sh      let b:comment_leader = '# '
