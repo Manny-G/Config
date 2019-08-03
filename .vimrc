@@ -21,7 +21,13 @@ set expandtab
 
 set path+=**
 set wildmenu
+set wildignore=*.settings,*.swp,*.o,*.git
+
 command! MT !ctags -R .
+command! RD !xclip -sel clip -o
+
+set undodir=~/.vim/undo/
+set undofile
 
 set splitbelow
 set splitright
