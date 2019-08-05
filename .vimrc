@@ -58,7 +58,6 @@ set wildignore=*.settings,*.swp,*.o,*.git,*/tmp/*,*.so,*.zip
 
 command! MT !ctags -R .
 command! RD !xclip -sel clip -o
-nmap ,TB :TagbarToggle<CR>
 nmap ,RT :RustTest<CR>
 
 set undodir=~/.vim/undo/
