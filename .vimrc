@@ -3,7 +3,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'rust-lang/rust.vim'
-Plug 'majutsushi/tagbar'
 Plug 'dense-analysis/ale'
 Plug 'chriskempson/base16-vim'
 Plug 'kien/ctrlp.vim'
