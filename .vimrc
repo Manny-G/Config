@@ -42,6 +42,9 @@ let g:ctrlp_working_path_mode = 'ra'
 autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=noinsert,menuone,noselect
 
+" Rust settings
+let g:rustfmt_autosave = 1
+
 " My settings
 filetype on
 syntax enable
@@ -63,6 +66,7 @@ set number
 set mouse=a
 set matchpairs+=<:>
 set hlsearch
+set incsearch
 set relativenumber
 
 " Spacing settings

@@ -1,3 +1,9 @@
+--exclude=.git
+--exclude=log
+--exclude=tmp
+--exclude=node_modules
+--exclude=CMakeFiles.txt
+
 --langdef=Rust
 --langmap=Rust:.rs
 --regex-Rust=/^[ \t]*(#\[[^\]]\][ \t]*)*(pub[ \t]+)?(extern[ \t]+)?("[^"]+"[ \t]+)?(unsafe[ \t]+)?fn[ \t]+([a-zA-Z0-9_]+)/\6/f,functions,function definitions/
