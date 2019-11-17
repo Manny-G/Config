@@ -19,6 +19,7 @@ Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-path'
+Plug 'junegunn/vim-easy-align'
 call plug#end()
 
 " Ale settings
@@ -32,9 +33,9 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)|target|build$',
-  \ 'file': '\v\.(exe|so|dll|o|swp)$',
-  \ 'link': 'some_bad_symbolic_links',
+  \ 'dir'  : '\v[\/]\.(git|hg|svn)|target|build$',
+  \ 'file' : '\v\.(exe|so|dll|o|swp)$',
+  \ 'link' : 'some_bad_symbolic_links',
   \ }
 
 " ncm2 settings
@@ -43,6 +44,10 @@ set completeopt=noinsert,menuone,noselect
 
 " Rust settings
 let g:rustfmt_autosave = 1
+
+" EasyAlign settigns
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 " My settings
 filetype on
