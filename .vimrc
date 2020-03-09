@@ -7,19 +7,21 @@ endif
 
 " Plugins
 call plug#begin('~/.vim/plugged')
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'rust-lang/rust.vim'
-Plug 'dense-analysis/ale'
 Plug 'chriskempson/base16-vim'
-Plug 'kien/ctrlp.vim'
+Plug 'dense-analysis/ale'
+Plug 'junegunn/fzf', { 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-easy-align'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'tpope/vim-surround'
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-path'
-Plug 'junegunn/vim-easy-align'
+Plug 'roxma/nvim-yarp'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " Ale settings
@@ -42,12 +44,14 @@ let g:ctrlp_custom_ignore = {
 autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=noinsert,menuone,noselect
 
-" Rust settings
-let g:rustfmt_autosave = 1
-
 " EasyAlign settigns
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+
+" fzf
+nmap ,fb :Buffers<CR>
+nmap ,ff :Files<CR>
+nmap ,ft :Tags<CR>
 
 " My settings
 filetype on
@@ -72,6 +76,7 @@ set matchpairs+=<:>
 set hlsearch
 set incsearch
 set relativenumber
+set cursorline
 
 " Spacing settings
 set tabstop=4
@@ -81,12 +86,11 @@ set expandtab
 " Allow find to do fuzy search (built-in CtrlP)
 set path+=**
 set wildmenu
-set wildignore=*.settings,*.swp,*.o,*.git,*/tmp/*,*.so,*.zip
+set wildignore=*.settings,*.swp,*.o,*.git,*/tmp/*,*.so,*.zip,*.pyc,*.a
 
 " Commands I run often enough
 command! MT !ctags -R .
-command! RD !xclip -sel clip -o
-nmap ,RT :RustTest<CR>
+command! RD read !xclip -sel clip -o
 
 " Keep undo history
 set undodir=~/.vim/undo/
@@ -97,7 +101,7 @@ set splitbelow
 set splitright
 
 " Shortcuts for smoother flow
-nnoremap ,t :tabnew<space>
+nnoremap ,tn :tabnew<space>
 nnoremap ,p :ptjump <C-R><C-W><CR>
 vnoremap < <gv
 vnoremap > >gv
